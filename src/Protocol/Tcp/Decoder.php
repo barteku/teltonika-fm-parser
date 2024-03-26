@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Uro\TeltonikaFmParser\Protocol\Tcp;
 
 use Uro\TeltonikaFmParser\Codec\BaseCodec;
+use Uro\TeltonikaFmParser\Codec\Codec64;
 use Uro\TeltonikaFmParser\Codec\Codec8;
 use Uro\TeltonikaFmParser\Codec\Codec8Extended;
 use Uro\TeltonikaFmParser\DecoderInterface;
@@ -25,6 +26,7 @@ class Decoder implements DecoderInterface
     private array $codecs = [
         0x08 => Codec8::class,
         0x8E => Codec8Extended::class,
+        0x36 => Codec64::class,
     ];
 
     /**
